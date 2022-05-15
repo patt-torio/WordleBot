@@ -13,14 +13,14 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    url = "https://api.datamuse.com/words?sp="
+    url = "https://api.datamuse.com/words?sp=" #Basic datamuse URL
     guess = ""
 
     if message.author == client.user:
         return
 
-    if message.content.startswith("!hasThese:"):
-        guess = message.content[10:15]
+    if message.content.startswith("!hasThese:"): #Command from user
+        guess = message.content[10:15] #Get the guessed letters
         more = message.content[15:]
         wordle = requests.get(url + guess)
 
@@ -31,9 +31,9 @@ async def on_message(message):
             if str not in i["word"]:
                 newWords.append(i["word"])
 
-        await message.channel.send("Have you tried " + newWords[random.randint(0, len(newWords) - 1)] + "?")
+        await message.channel.send("Have you tried " + newWords[random.randint(0, len(newWords) - 1)] + "?") #Output a random word from the list of suggested words
     elif message.content.startswith("!helpMe"):
         await message.channel.send("Commands: \nhasThese: Type in, without spaces, ?????. Fill in any letters that you know followed by any that are in the word")
 
 
-client.run("ODk4NzMwODI3NTIzOTczMTUw.YWoeTg.fd7DH6RaXGzg5pkUDuAtm3F0Uec")
+client.run("ODk4NzMwODI3NTIzOTczMTUw.YWoeTg.fd7DH6RaXGzg5pkUDuAtm3F0Uec") #Bot token
