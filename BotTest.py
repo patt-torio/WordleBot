@@ -36,4 +36,4 @@ async def on_message(message):
         await message.channel.send("Commands: \nhasThese: Type in, without spaces, ?????. Fill in any letters that you know followed by any that are in the word")
 
 
-client.run("ODk4NzMwODI3NTIzOTczMTUw.YWoeTg.fd7DH6RaXGzg5pkUDuAtm3F0Uec") #Bot token
+client.run() #Bot token
