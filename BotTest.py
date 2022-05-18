@@ -4,7 +4,7 @@ import discord as discord
 import requests
 import random
 
-
+#Template used: https://www.freecodecamp.org/news/create-a-discord-bot-with-python/
 client = discord.Client()
 
 @client.event
